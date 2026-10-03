@@ -30,7 +30,7 @@ h2{font-size:clamp(21px,5vw,28px);margin:0 0 25px}.bigheart{font-size:58px;margi
 .cinema-line.show{opacity:1;transform:none}
 .cinema-small{font:11px Consolas,monospace;color:#6e4562;letter-spacing:2px;margin-bottom:25px}
 .cinema-big{font-size:clamp(28px,8vw,52px);font-weight:800;color:#ff4fa3;text-shadow:0 0 24px rgba(255,79,163,.35)}
-.cinema-photo{width:min(72vw,390px);max-height:46vh;object-fit:contain;opacity:0;transform:scale(.94);transition:opacity 1.6s ease,transform 1.8s ease;border:1px solid #713562;box-shadow:0 0 35px rgba(255,79,163,.18)}
+.cinema-photo{width:min(58vw,330px);height:min(62vh,520px);object-fit:cover;object-position:center;opacity:0;transform:scale(.94);transition:opacity 1.6s ease,transform 1.8s ease;border:1px solid #713562;box-shadow:0 0 35px rgba(255,79,163,.18)}
 .cinema-photo.show{opacity:1;transform:scale(1)}
 @media(max-width:700px){
   .memory-grid{grid-template-columns:1fr}
@@ -137,7 +137,7 @@ document.addEventListener("visibilitychange",()=>{if(document.hidden){}});
 </script><div id="cinema" class="hidden"><div class="cinema-inner">
 <div id="c1" class="cinema-line cinema-small">LOVE.exe // FINAL TRANSMISSION</div>
 <div id="c2" class="cinema-line">Dulu waktu pertama foto bareng...</div>
-<div style="margin:20px 0"><img id="cphoto" class="cinema-photo" src="mayla_photo.png" alt="Foto pertama kita"></div>
+<div style="margin:20px 0"><img id="cphoto" class="cinema-photo" src="first_photo.png" alt="Foto pertama kita"></div>
 <div id="c3" class="cinema-line">muka aku masih kaku banget. 😂</div>
 <div id="c4" class="cinema-line" style="margin-top:18px">Tapi ada satu hal yang sampai sekarang<br>aku nggak pernah anggap biasa.</div>
 <div id="c5" class="cinema-line" style="margin-top:18px">Aku ngerasa dicintai banget sama kamu.</div>
