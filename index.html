@@ -25,7 +25,7 @@ h2{font-size:clamp(21px,5vw,28px);margin:0 0 25px}.bigheart{font-size:58px;margi
 .memory-detail{max-width:720px;margin:20px auto 0;padding:18px;border-left:2px solid #ff4fa3;background:rgba(255,79,163,.045);font-size:15px;line-height:1.7;text-align:left;min-height:90px}
 #cinema{position:fixed;inset:0;background:#050207;z-index:50;display:flex;align-items:center;justify-content:center;text-align:center}
 #cinema.hidden{display:none}
-.cinema-inner{width:min(90vw,760px);padding:20px}
+.cinema-inner{width:min(90vw,760px);max-height:100vh;box-sizing:border-box;padding:20px 20px 70px;overflow-y:auto;overflow-x:hidden;scroll-behavior:smooth;scrollbar-width:thin}
 .cinema-line{opacity:0;transform:translateY(12px);transition:opacity 1.2s ease,transform 1.2s ease;font-size:clamp(16px,4vw,24px);line-height:1.65}
 .cinema-line.show{opacity:1;transform:none}
 .cinema-small{font:11px Consolas,monospace;color:#6e4562;letter-spacing:2px;margin-bottom:25px}
@@ -39,8 +39,14 @@ h2{font-size:clamp(21px,5vw,28px);margin:0 0 25px}.bigheart{font-size:58px;margi
   .screen{padding:4px 6px 16px}
   .letter{font-size:14px;line-height:1.6}
   .bodytext{line-height:1.55}
+  #cinema{align-items:flex-start}
+  .cinema-inner{width:100vw;max-height:100vh;padding:18px 14px 80px}
+  .cinema-photo{width:min(68vw,330px);height:min(52vh,460px)}
+  .cinema-line{font-size:clamp(15px,4.4vw,22px)}
+  .cinema-big{font-size:clamp(28px,9vw,50px)}
 }
-</style></head>
+</style><!-- V7: cinematic ending auto-scroll fix so I LOVE YOU is always visible -->
+</head>
 <body><div id="bg"></div><div id="veil"></div><div id="rain"></div>
 <header><h1>LOVE.exe</h1><p>A LITTLE PROGRAM MADE FOR MAYLA RUBI SHAHIA ♥</p></header>
 <main>
@@ -126,9 +132,14 @@ function startCinema(){
  music.volume=.18;
  const steps=[["c1",500],["c2",1700],["cphoto",2500],["c3",4200],["c4",5600],["c5",7200],["c6",9000],["c7",10300],["c8",12000],["c9",13700],["c10",15300]];
  steps.forEach(([id,ms])=>setTimeout(()=>{
-   const e=document.getElementById(id); if(e)e.classList.add("show");
+   const e=document.getElementById(id);
+   if(e){
+     e.classList.add("show");
+     setTimeout(()=>e.scrollIntoView({behavior:"smooth",block:"center"}),120);
+   }
    if(id==="cphoto")playHeart();
    if(id==="c7"||id==="c9")playHeart();
+   if(id==="c9")setTimeout(()=>document.getElementById("c9").scrollIntoView({behavior:"smooth",block:"center"}),250);
  },ms));
  setTimeout(()=>{for(let i=0;i<45;i++)setTimeout(spawnHeart,i*75)},13500);
 }
