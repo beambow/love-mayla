@@ -14,6 +14,26 @@ h2{font-size:clamp(21px,5vw,28px);margin:0 0 25px}.bigheart{font-size:58px;margi
 .bar{width:min(82vw,720px);height:15px;background:#2b172e;margin:28px auto 8px}.fill{height:100%;background:#ff4fa3;width:0}.meter{width:min(75vw,650px);height:22px;background:#2b172e;margin:10px auto}.meter .fill{width:97%;height:100%}
 .letter{max-width:760px;margin:auto;font-size:clamp(14px,3.1vw,17px);line-height:1.55;white-space:pre-line}.small{font-size:12px}.portrait{max-width:min(70vw,420px);max-height:44vh;object-fit:contain;border:1px solid #713562;display:block;margin:18px auto;box-shadow:0 0 28px rgba(255,79,163,.18)}.footer{position:fixed;bottom:8px;left:0;right:0;text-align:center;color:#6e4562;font-size:9px}
 .hidden{display:none!important}@media(max-height:700px){main{margin-top:1vh;height:72vh;padding:15px}.letter{font-size:13px}.portrait{max-height:38vh}.btn{margin-top:10px}}
+
+/* V2 — Personal Memory Vault + cinematic ending */
+.memory-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:820px;margin:20px auto 0}
+.memory-card{background:rgba(255,79,163,.055);border:1px solid #713562;padding:17px 13px;text-align:left;cursor:pointer;transition:.25s;border-radius:4px}
+.memory-card:hover{transform:translateY(-3px);border-color:#ff4fa3;box-shadow:0 0 20px rgba(255,79,163,.12)}
+.memory-card .num{font:10px Consolas,monospace;color:#ff4fa3;letter-spacing:2px}
+.memory-card h3{font-size:15px;margin:8px 0;color:#fff}
+.memory-card p{font-size:12px;line-height:1.55;color:#caaabd;margin:0}
+.memory-detail{max-width:720px;margin:20px auto 0;padding:18px;border-left:2px solid #ff4fa3;background:rgba(255,79,163,.045);font-size:15px;line-height:1.7;text-align:left;min-height:90px}
+.signature{color:#ff9dcb;font:12px Consolas,monospace;margin-top:18px}
+#cinema{position:fixed;inset:0;background:#050207;z-index:50;display:flex;align-items:center;justify-content:center;text-align:center;opacity:1;transition:opacity 1.8s ease}
+#cinema.hidden{display:none}
+.cinema-inner{width:min(90vw,760px);padding:20px}
+.cinema-line{opacity:0;transform:translateY(12px);transition:opacity 1.2s ease,transform 1.2s ease;font-size:clamp(16px,4vw,24px);line-height:1.65}
+.cinema-line.show{opacity:1;transform:none}
+.cinema-small{font:11px Consolas,monospace;color:#6e4562;letter-spacing:2px;margin-bottom:25px}
+.cinema-big{font-size:clamp(28px,8vw,52px);font-weight:800;color:#ff4fa3;text-shadow:0 0 24px rgba(255,79,163,.35)}
+.cinema-photo{width:min(72vw,390px);max-height:46vh;object-fit:contain;opacity:0;transform:scale(.94);transition:opacity 1.6s ease,transform 1.8s ease;border:1px solid #713562;box-shadow:0 0 35px rgba(255,79,163,.18)}
+.cinema-photo.show{opacity:1;transform:scale(1)}
+@media(max-width:700px){.memory-grid{grid-template-columns:1fr}.memory-card{padding:14px}main{height:min(75vh,620px)}}
 </style></head>
 <body><div id="bg"></div><div id="veil"></div><div id="rain"></div>
 <header><h1>LOVE.exe</h1><p>A LITTLE PROGRAM MADE FOR MAYLA RUBI SHAHIA ♥</p></header>
@@ -25,35 +45,109 @@ Cuma alasan kecil supaya kamu tersenyum.</div><div class="bigheart pink">♥</di
 Parameter normal tidak dapat digunakan.</div></section>
 <section id="result" class="screen hidden"><h2 class="pink mono">ANALYSIS COMPLETE ♥</h2><div class="muted mono">SUBJECT: MAYLA RUBI SHAHIA</div><div style="margin-top:25px;font-weight:700">SALTING METER</div><div class="meter"><div class="fill"></div></div><div class="soft mono">97%</div><div class="hot mono" style="margin-top:38px;font-weight:700">WARNING:</div><div class="bodytext">Sistem mendeteksi senyum.
 Operator juga mulai salting.</div><button class="btn" onclick="show('letter')">BUKA SURAT ♥</button></section>
-<section id="letter" class="screen hidden"><h2 class="pink">♥ SURAT DIGITAL ♥</h2><div id="letterText" class="letter">Dear Mayla Rubi Shahia,
+<section id="letter" class="screen hidden"><h2 class="pink">♥ SURAT DIGITAL ♥</h2><div id="letterText" class="letter">Dear Mayla,
 
-Aku sebenarnya nggak tahu apakah kamu bakal ketawa,
-salting, atau malah bilang "apaan sih?" setelah melihat ini.
+Kita awalnya cuma kenal dari jurusan TAV di SMK KARNAS Kuningan.
+Tapi entah sejak kapan, kamu jadi seseorang yang punya tempat
+yang beda banget buat gue.
 
-Tapi aku sengaja bikin program kecil ini karena aku ingin
-memberikan sesuatu yang nggak biasa.
+Gue suka kamu karena kamu lucu, imut, cantik, gemesin...
+pokoknya banyak banget hal kecil tentang kamu yang bikin gue
+seneng cuma karena ada kamu.
 
-Kalau kamu sampai senyum setelah membaca ini...
-berarti programnya berhasil. ♥</div><div class="muted small" style="margin-top:18px">P.S. Kamu masih boleh bilang ini lebay. Aku terima. 😂</div><button class="btn" onclick="startFinal()">REVEAL THE REAL MESSAGE ♥</button></section>
+Tapi kalau ada satu hal yang paling pengen gue simpan,
+itu bukan cuma tentang betapa cantiknya kamu.
+
+Gue ngerasa dicintai banget sama kamu.
+Dan jujur, baru kali ini gue ngerasain feel yang benar-benar beda.
+
+Oh iya...
+gue juga masih inget foto pertama kita.
+Muka gue waktu itu masih kaku banget. 😂
+
+Mungkin sekarang gue belum punya banyak kata-kata hebat
+buat menjelaskan semuanya.
+
+Jadi untuk sementara,
+biar website kecil ini yang ngomong.
+
+— Brama ♥</div><div class="muted small" style="margin-top:18px">P.S. Kamu masih boleh bilang ini lebay. Aku terima. 😂</div><button class="btn" onclick="startFinal()">REVEAL THE REAL MESSAGE ♥</button></section>
 <section id="processing" class="screen hidden"><h2 class="pink mono">PROCESSING FINAL MESSAGE...</h2><div class="bar"><div class="fill" style="width:100%;background:#ff9dcb"></div></div><div id="typePct" class="soft mono">0%</div><div id="typed" class="bodytext" style="font-weight:700;margin-top:35px"></div></section>
 <section id="heartbeat" class="screen hidden"><h2 class="pink mono">♥ HEARTBEAT MODE ♥</h2><div id="pulse" class="pink" style="font-size:58px;margin:60px 0">♥</div><div class="muted mono">heartbeat.exe</div><div class="soft" style="margin-top:25px">♥ &nbsp;&nbsp; ♥ &nbsp;&nbsp; ♥</div></section>
-<section id="reveal" class="screen hidden"><h2 class="pink mono">FINAL RESULT</h2><div class="muted mono">SUBJECT: MAYLA RUBI SHAHIA</div><div class="bodytext" style="font-weight:700;margin-top:35px">Tidak ditemukan alasan logis
-kenapa aku selalu senang kalau ada kamu.
+<section id="reveal" class="screen hidden"><h2 class="pink mono">ANALYSIS COMPLETE ♥</h2><div class="muted mono">FINAL CONCLUSION: NOT EVERYTHING NEEDS A LOGICAL ANSWER.</div><div class="bodytext" style="font-weight:700;margin-top:30px">Ada hal yang ternyata nggak bisa dihitung,
+nggak bisa dijelaskan,
+dan nggak bisa dimasukin ke parameter apa pun.</div><div class="hot mono" style="margin-top:25px;font-weight:700">THIS WAS NEVER AN ANALYSIS.</div><div class="soft mono" style="font-size:20px;font-weight:700;margin-top:16px">IT WAS AN EXCUSE. ♥</div><button class="btn alt" onclick="show('vault')">OPEN MEMORY VAULT ♥</button></section>
 
-Mungkin...
-memang bukan sistem yang harus menjelaskannya.</div><div class="hot mono" style="margin-top:30px;font-weight:700">THIS WAS NEVER AN ANALYSIS.</div><div class="soft mono" style="font-size:20px;font-weight:700;margin-top:20px">IT WAS AN EXCUSE. ♥</div><button class="btn alt" onclick="show('photo')">ONE LAST THING... ♥</button></section>
-<section id="photo" class="screen hidden"><h2 class="pink mono">ONE LAST THING... ♥</h2><div class="muted mono">FOR MAYLA RUBI SHAHIA</div><img class="portrait" src="mayla_photo.png" alt="Mayla"><div class="bodytext" style="font-weight:700">Ini bagian yang nggak bisa dianalisis oleh LOVE.exe. ♥</div></section>
+<section id="vault" class="screen hidden"><h2 class="pink mono">MEMORY VAULT</h2><div class="muted mono">PERSONAL FILES // ONLY FOR MAYLA</div>
+<div class="memory-grid">
+  <div class="memory-card" onclick="memory(1)"><div class="num">MEMORY_01</div><h3>WHERE IT STARTED</h3><p>TAV • SMK KARNAS KUNINGAN</p></div>
+  <div class="memory-card" onclick="memory(2)"><div class="num">MEMORY_02</div><h3>THE FEELING</h3><p>Sesuatu yang baru pertama kali gue rasain.</p></div>
+  <div class="memory-card" onclick="memory(3)"><div class="num">MEMORY_03</div><h3>FIRST PHOTO</h3><p>Dan iya... muka gue masih kaku banget. 😂</p></div>
+</div>
+<div id="memoryDetail" class="memory-detail muted">Pilih satu memory. Ada beberapa hal yang lebih enak diceritain pelan-pelan. ♥</div>
+<button class="btn" onclick="show('photo')">LANJUT ♥</button></section>
+
+<section id="photo" class="screen hidden"><h2 class="pink mono">ONE LAST THING... ♥</h2><div class="muted mono">FOR MAYLA RUBI SHAHIA</div><img class="portrait" src="mayla_photo.png" alt="Mayla"><div class="bodytext" style="font-weight:700">Ini bagian yang nggak bisa dianalisis oleh LOVE.exe. ♥</div><button class="btn alt" onclick="startCinema()">JANGAN DITUTUP DULU ♥</button></section>
 </main><div class="footer">LOVE.exe • Made with code, courage, and a little bit of feeling ♥</div>
 <audio id="music" src="AM_backing_track.wav" loop preload="auto"></audio><audio id="typeSound" src="type_click.wav" preload="auto"></audio><audio id="heartSound" src="heartbeat.wav" preload="auto"></audio>
 <script>
-const ids=["home","scan","result","letter","processing","heartbeat","reveal","photo"];let current="home",timer=null;
+const ids=["home","scan","result","letter","processing","heartbeat","reveal","vault","photo"];let current="home",timer=null;
 const music=document.getElementById("music"),typeSound=document.getElementById("typeSound"),heartSound=document.getElementById("heartSound");
 function show(id){ids.forEach(x=>document.getElementById(x).classList.toggle("hidden",x!==id));current=id}
 function spawnHeart(){const e=document.createElement("span");e.className="heart";e.textContent="♥";e.style.left=(Math.random()*100)+"vw";e.style.fontSize=(7+Math.random()*10)+"px";e.style.animationDuration=(3.8+Math.random()*4.5)+"s";e.style.setProperty("--dx",(Math.random()*70-35)+"px");e.style.opacity=.35+Math.random()*.5;document.getElementById("rain").appendChild(e);setTimeout(()=>e.remove(),9000)}
 setInterval(spawnHeart,150);for(let i=0;i<25;i++)setTimeout(spawnHeart,i*80);
 function startScan(){show("scan");let p=0;const labels=[[0,19,"CONNECTING TO MAYLA..."],[20,39,"LOADING SMILES..."],[40,59,"CHECKING HAPPY MOMENTS..."],[60,79,"CALCULATING SPECIAL LEVEL..."],[80,100,"CALCULATING SALTING LEVEL..."]];clearInterval(timer);timer=setInterval(()=>{p++;document.getElementById("scanFill").style.width=p+"%";document.getElementById("scanPct").textContent=p+"%";document.getElementById("scanLabel").textContent=labels.find(x=>p>=x[0]&&p<=x[1])?.[2]||"CALCULATING SALTING LEVEL...";if(p>=100){clearInterval(timer);setTimeout(()=>{show("result");playHeart()},500)}},35)}
 function playHeart(){heartSound.currentTime=0;heartSound.volume=.7;heartSound.play().catch(()=>{})}
-function startFinal(){show("processing");music.volume=.42;music.play().catch(()=>{});const text="MAYLA,\n\nada satu hal yang belum dianalisis\noleh sistem ini.\n\nMungkin... bukan sistem yang harus\nmenjelaskannya.";let i=0;const out=document.getElementById("typed"),pct=document.getElementById("typePct");function step(){if(i<=text.length){out.textContent=text.slice(0,i);pct.textContent=Math.round(i/text.length*100)+"%";if(i<text.length&&text[i]!=="\n"){typeSound.currentTime=0;typeSound.volume=.3;typeSound.play().catch(()=>{})}i++;setTimeout(step,text[i-1]==="\n"?220:38)}else setTimeout(startHeartbeat,1000)}step()}
+function startFinal(){show("processing");music.volume=.42;music.play().catch(()=>{});const text="MAYLA,\n\nada satu hal yang belum dianalisis\noleh sistem ini.\n\nGue ngerasa dicintai banget sama kamu.\nDan baru kali ini... feel-nya beda.";let i=0;const out=document.getElementById("typed"),pct=document.getElementById("typePct");function step(){if(i<=text.length){out.textContent=text.slice(0,i);pct.textContent=Math.round(i/text.length*100)+"%";if(i<text.length&&text[i]!=="\n"){typeSound.currentTime=0;typeSound.volume=.3;typeSound.play().catch(()=>{})}i++;setTimeout(step,text[i-1]==="\n"?220:38)}else setTimeout(startHeartbeat,1000)}step()}
 function startHeartbeat(){show("heartbeat");let n=0;const pulse=document.getElementById("pulse");const t=setInterval(()=>{n++;pulse.style.transform=n%2?"scale(1.22)":"scale(1)";if(n%2===0)playHeart();if(n>=10){clearInterval(t);setTimeout(()=>{show("reveal");playHeart()},850)}},260)}
+
+function memory(n){
+ const d=document.getElementById("memoryDetail");
+ const data={
+  1:"Semuanya berawal dari jurusan TAV di SMK KARNAS Kuningan. Waktu itu mungkin belum kepikiran kalau dari tempat itu gue bakal kenal sama seseorang yang akhirnya jadi sepenting ini buat gue. ♥",
+  2:"Yang paling susah gue jelasin bukan kapan gue mulai suka. Tapi rasanya. Gue ngerasa dicintai banget sama kamu, dan jujur... baru kali ini feel-nya bener-bener beda.",
+  3:"Memory receh tapi gue simpan: foto pertama kita. 😂 Muka gue masih kaku banget. Kayak otak gue belum selesai loading karena berdiri di sebelah kamu."
+ };
+ d.textContent=data[n];
+ d.classList.remove("muted");
+ d.style.color="#fff7fc";
+}
+function startCinema(){
+ const c=document.getElementById("cinema");
+ c.classList.remove("hidden");
+ document.body.style.overflow="hidden";
+ music.volume=.18;
+ const steps=[
+  ["c1",500],["c2",1700],["cphoto",2500],["c3",4200],["c4",5600],
+  ["c5",7200],["c6",9000],["c7",10300],["c8",12000],["c9",13700],["c10",15300]
+ ];
+ steps.forEach(([id,ms])=>setTimeout(()=>{
+   const e=document.getElementById(id); if(e) e.classList.add("show");
+   if(id==="cphoto"){ document.getElementById("cphoto").classList.add("show"); playHeart(); }
+   if(id==="c7"||id==="c9"){ playHeart(); }
+ },ms));
+ setTimeout(()=>{
+   for(let i=0;i<45;i++) setTimeout(spawnHeart,i*75);
+ },13500);
+}
+
 document.addEventListener("visibilitychange",()=>{if(document.hidden){}});
-</script></body></html>
+</script>
+<div id="cinema" class="hidden">
+  <div class="cinema-inner">
+    <div id="c1" class="cinema-line cinema-small">LOVE.exe // FINAL TRANSMISSION</div>
+    <div id="c2" class="cinema-line">Dulu waktu pertama foto bareng...</div>
+    <div id="cphotoWrap" style="margin:20px 0">
+      <img id="cphoto" class="cinema-photo" src="mayla_photo.png" alt="Mayla">
+    </div>
+    <div id="c3" class="cinema-line">muka gue masih kaku banget. 😂</div>
+    <div id="c4" class="cinema-line" style="margin-top:18px">Tapi ada satu hal yang sampai sekarang<br>gue nggak pernah anggap biasa.</div>
+    <div id="c5" class="cinema-line" style="margin-top:18px">Gue ngerasa dicintai banget sama kamu.</div>
+    <div id="c6" class="cinema-line" style="margin-top:18px">Dan baru kali ini...</div>
+    <div id="c7" class="cinema-line cinema-big" style="margin-top:14px">FEEL-NYA BEDA.</div>
+    <div id="c8" class="cinema-line" style="margin-top:22px">Makasih udah hadir di hidup gue, Mayla.</div>
+    <div id="c9" class="cinema-line cinema-big" style="margin-top:20px">I LOVE YOU. ♥</div>
+    <div id="c10" class="cinema-line cinema-small" style="margin-top:25px">— from Brama, with all my heart</div>
+  </div>
+</div>
+</body></html>
