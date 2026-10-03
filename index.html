@@ -22,7 +22,7 @@ h2{font-size:clamp(21px,5vw,28px);margin:0 0 25px}.bigheart{font-size:58px;margi
 .memory-card .num{font:10px Consolas,monospace;color:#ff4fa3;letter-spacing:2px}
 .memory-card h3{font-size:15px;margin:8px 0;color:#fff}
 .memory-card p{font-size:12px;line-height:1.55;color:#caaabd;margin:0}
-.memory-detail{max-width:720px;margin:20px auto 0;padding:18px;border-left:2px solid #ff4fa3;background:rgba(255,79,163,.045);font-size:15px;line-height:1.7;text-align:left;min-height:90px}
+.treasure-wrap{margin:22px auto 4px}.treasure-btn{width:min(88vw,420px);padding:14px 18px;border:1px solid #713562;border-radius:6px;background:linear-gradient(180deg,rgba(255,79,163,.10),rgba(20,8,25,.8));color:#fff;cursor:pointer;box-shadow:0 0 24px rgba(255,79,163,.08);transition:.25s}.treasure-btn:hover{transform:translateY(-3px);border-color:#ff4fa3}.chest{font-size:38px;filter:drop-shadow(0 0 10px rgba(255,79,163,.35));animation:treasurePulse 1.8s ease-in-out infinite}@keyframes treasurePulse{50%{transform:translateY(-4px) scale(1.05)}}.treasure-title{margin-top:5px;font:700 15px Consolas,monospace;color:#ff9dcb;letter-spacing:1px}.treasure-sub{font-size:9px;color:#8d607e;margin-top:5px}.memory-gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:760px;margin:20px auto}.memory-gallery img{width:100%;height:260px;object-fit:cover;border:1px solid #713562;border-radius:4px;box-shadow:0 0 18px rgba(255,79,163,.10);cursor:pointer;transition:.25s}.memory-gallery img:hover{transform:scale(1.02);border-color:#ff4fa3}.memory-detail{max-width:720px;margin:20px auto 0;padding:18px;border-left:2px solid #ff4fa3;background:rgba(255,79,163,.045);font-size:15px;line-height:1.7;text-align:left;min-height:90px}
 #cinema{position:fixed;inset:0;background:#050207;z-index:50;display:flex;align-items:center;justify-content:center;text-align:center}
 #cinema.hidden{display:none}
 .cinema-inner{width:min(90vw,760px);max-height:100vh;box-sizing:border-box;padding:20px 20px 70px;overflow-y:auto;overflow-x:hidden;scroll-behavior:smooth;scrollbar-width:thin}
@@ -33,6 +33,7 @@ h2{font-size:clamp(21px,5vw,28px);margin:0 0 25px}.bigheart{font-size:58px;margi
 .cinema-photo{width:min(58vw,330px);height:min(62vh,520px);object-fit:cover;object-position:center;opacity:0;transform:scale(.94);transition:opacity 1.6s ease,transform 1.8s ease;border:1px solid #713562;box-shadow:0 0 35px rgba(255,79,163,.18)}
 .cinema-photo.show{opacity:1;transform:scale(1)}
 @media(max-width:700px){
+  .memory-gallery{grid-template-columns:1fr}.memory-gallery img{height:auto;max-height:58vh;object-fit:contain}
   .memory-grid{grid-template-columns:1fr}
   .memory-card{padding:14px}
   main{height:min(75vh,620px);padding:14px}
@@ -99,7 +100,14 @@ dan nggak bisa dimasukin ke parameter apa pun.</div><div class="hot mono" style=
 <div class="memory-card" onclick="memory(3)"><div class="num">MEMORY_03</div><h3>FIRST PHOTO</h3><p>Dan iya... muka aku masih kaku banget. 😂</p></div>
 </div>
 <div id="memoryDetail" class="memory-detail muted">Pilih satu memory. Ada beberapa hal yang lebih enak diceritain pelan-pelan. ♥</div>
+<div class="treasure-wrap"><button class="treasure-btn" onclick="openTreasure()"><div class="chest">🗝️</div><div class="treasure-title">OPEN THE TREASURE</div><div class="treasure-sub mono">A LITTLE BOX OF MEMORIES</div></button></div>
 <button class="btn" onclick="show('photo')">LANJUT ♥</button></section>
+<section id="treasure" class="screen hidden"><h2 class="pink mono">TREASURE UNLOCKED ♥</h2><div class="muted mono">MEMORIES FOUND: 04</div><div id="memoryGallery" class="memory-gallery">
+<img src="memories/memory_1.jpeg" alt="Memory 1">
+<img src="memories/memory_2.jpeg" alt="Memory 2">
+<img src="memories/memory_3.jpeg" alt="Memory 3">
+<img src="memories/memory_4.jpeg" alt="Memory 4">
+</div><button class="btn alt" onclick="show('vault')">KEMBALI KE VAULT ♥</button></section>
 
 <!-- Saat siap, ganti file mayla_photo.png dengan foto pertama kalian. Nama file tetap sama. -->
 <section id="photo" class="screen hidden"><h2 class="pink mono">ONE LAST THING... ♥</h2><div class="muted mono">FOR MAYLA RUBI SHAHIA</div><img class="portrait" src="mayla_photo.png" alt="Foto pertama kita"><div class="bodytext" style="font-weight:700">Ini bagian yang nggak bisa dianalisis oleh LOVE.exe. ♥</div><button class="btn alt" onclick="startCinema()">JANGAN DITUTUP DULU ♥</button></section>
@@ -118,6 +126,7 @@ function playHeart(){heartSound.currentTime=0;heartSound.volume=.7;heartSound.pl
 function startFinal(){show("processing");startMusic();const text="MAYLA,\n\nada satu hal yang belum dianalisis\noleh sistem ini.\n\nMungkin... bukan sistem yang harus\nmenjelaskannya.";let i=0;const out=document.getElementById("typed"),pct=document.getElementById("typePct");function step(){if(i<=text.length){out.textContent=text.slice(0,i);pct.textContent=Math.round(i/text.length*100)+"%";if(i<text.length&&text[i]!=="\n"){typeSound.currentTime=0;typeSound.volume=.3;typeSound.play().catch(()=>{})}i++;setTimeout(step,text[i-1]==="\n"?220:38)}else setTimeout(startHeartbeat,1000)}step()}
 function startHeartbeat(){show("heartbeat");let n=0;const pulse=document.getElementById("pulse");const t=setInterval(()=>{n++;pulse.style.transform=n%2?"scale(1.22)":"scale(1)";if(n%2===0)playHeart();if(n>=10){clearInterval(t);setTimeout(()=>{show("reveal");playHeart()},850)}},260)}
 
+function openTreasure(){show("treasure");document.querySelectorAll("#memoryGallery img").forEach((img,i)=>{img.style.opacity="0";img.style.transform="translateY(12px)";setTimeout(()=>{img.style.transition="opacity .7s ease, transform .7s ease";img.style.opacity="1";img.style.transform="none"},180+i*180)});}
 function memory(n){
  const d=document.getElementById("memoryDetail");
  const data={
