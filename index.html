@@ -112,6 +112,17 @@ h2{font-size:clamp(21px,5vw,28px);margin:0 0 25px}.bigheart{font-size:58px;margi
   .cinema-line{font-size:clamp(15px,4.4vw,22px)}
   .cinema-big{font-size:clamp(28px,9vw,50px)}
 }
+
+/* V21 — paper opening, soft petals, emotional ending */
+.letter-modal .letter-paper{animation:paperOpen .72s cubic-bezier(.2,.8,.2,1) both;transform-origin:50% 8%;}
+.letter-modal.show .letter-paper{animation:paperOpen .72s cubic-bezier(.2,.8,.2,1) both;}
+@keyframes paperOpen{0%{opacity:0;transform:perspective(900px) rotateX(-78deg) translateY(-24px) scale(.92)}55%{opacity:1;transform:perspective(900px) rotateX(8deg) translateY(4px) scale(1.015)}100%{opacity:1;transform:perspective(900px) rotateX(0) translateY(0) scale(1)}}
+.letter-modal.show{animation:paperBackdrop .35s ease both}
+@keyframes paperBackdrop{from{background:rgba(5,2,9,0)}to{background:rgba(5,2,9,.90)}}
+.letter-paper .letter-kicker{letter-spacing:2px;color:#8d2459;font-size:10px}.letter-paper h3{font-size:25px;color:#5a2940;margin:12px 0 14px}.letter-paper .letter-body{font-size:16px!important;line-height:2!important}.letter-paper .letter-close{box-shadow:0 5px 12px rgba(90,41,64,.18)}
+.paper-petal{position:fixed;z-index:120;pointer-events:none;font-size:15px;color:#e68db5;animation:petalFall 2.1s ease-out forwards;filter:drop-shadow(0 2px 4px rgba(0,0,0,.2))}
+@keyframes petalFall{0%{opacity:0;transform:translate(0,0) rotate(0) scale(.6)}15%{opacity:.9}100%{opacity:0;transform:translate(var(--dx),var(--dy)) rotate(var(--rot)) scale(1.05)}}
+.cinema-final .cinema-big{letter-spacing:.8px}.cinema-final .cinema-photo{box-shadow:0 0 36px rgba(255,79,163,.16);border-radius:3px}.cinema-heartline{max-width:560px;margin:34px auto 0;color:#caaabd;font:16px/1.9 Georgia,"Times New Roman",serif;opacity:0;transform:translateY(12px);transition:opacity 1.2s ease,transform 1.2s ease}.cinema-heartline.show{opacity:1;transform:none}.cinema-final .cinema-big.final-love{text-shadow:0 0 30px rgba(255,79,163,.42);font-size:clamp(26px,6vw,42px)}
 </style><!-- V7: cinematic ending auto-scroll fix so I LOVE YOU is always visible -->
 </head>
 <body><div id="bg"></div><div id="veil"></div><div id="rain"></div>
@@ -212,7 +223,8 @@ function playHeart(){
 function startFinal(){show("processing");startMusic();const text="MAYLA,\n\nada satu hal yang belum dianalisis\noleh sistem ini.\n\nMungkin... bukan sistem yang harus\nmenjelaskannya.";let i=0;const out=document.getElementById("typed"),pct=document.getElementById("typePct");function step(){if(i<=text.length){out.textContent=text.slice(0,i);pct.textContent=Math.round(i/text.length*100)+"%";if(i<text.length&&text[i]!=="\n"){typeSound.currentTime=0;typeSound.volume=.3;typeSound.play().catch(()=>{})}i++;setTimeout(step,text[i-1]==="\n"?220:38)}else setTimeout(startHeartbeat,1000)}step()}
 function startHeartbeat(){show("heartbeat");let n=0;const pulse=document.getElementById("pulse");const t=setInterval(()=>{n++;pulse.style.transform=n%2?"scale(1.38)":"scale(.96)";if(n%2===0)playHeart();if(n>=10){clearInterval(t);setTimeout(()=>{show("reveal");playHeart()},850)}},190)}
 
-function openWhen(n){const modal=document.getElementById("letterModal"),title=document.getElementById("letterTitle"),body=document.getElementById("letterBody"),kicker=document.getElementById("letterKicker");const data={1:{t:"Kalau kamu lagi kangen...",b:"Mayla,\n\nkalau kamu buka ini berarti mungkin kamu lagi kangen. Jadi sekarang anggap aja aku lagi duduk di sebelah kamu.\n\nNggak harus ngomong apa-apa. Sini dulu. Aku temenin. ♥\n\nDan kalau rasa kangennya masih ada... yaudah, simpan sedikit buat nanti pas kita ketemu.",k:"OPEN WHEN // YOU MISS ME"},2:{t:"Kalau hari kamu lagi berat...",b:"Mayla,\n\naku tahu aku nggak selalu bisa langsung bikin semuanya jadi baik. Tapi aku mau kamu tahu kalau kamu nggak harus selalu kuat sendirian.\n\nIstirahat dulu. Tarik napas. Minum air. Pelan-pelan aja.\n\nAku mungkin nggak bisa memperbaiki semuanya, tapi aku selalu mau dengerin kamu. ♥",k:"OPEN WHEN // YOU FEEL SAD"},3:{t:"Kalau kamu butuh peluk...",b:"Oke. Nggak perlu banyak alasan.\n\n🫂\n\nIni peluk virtual dari aku.\n\nBayangin aku lagi bilang:\n\n“sini...”\n\nTerus aku peluk kamu sampai kamu bilang cukup. ♥",k:"OPEN WHEN // YOU NEED A HUG"},4:{t:"Kalau kamu butuh alasan buat senyum...",b:"Pertama: kamu lucu.\n\nKedua: aku suka kamu.\n\nKetiga: sekarang kamu lagi baca pesan dari orang yang mungkin lagi senyum sendiri karena ngebayangin kamu baca ini. ♥\n\nNah. Minimal senyum dikit dong.",k:"OPEN WHEN // YOU WANT TO SMILE"}}[n];if(!data)return;kicker.textContent=data.k;title.textContent=data.t;body.textContent=data.b;modal.classList.add("show");}
+function openWhen(n){const modal=document.getElementById("letterModal"),title=document.getElementById("letterTitle"),body=document.getElementById("letterBody"),kicker=document.getElementById("letterKicker");const data={1:{t:"Kalau kamu lagi kangen...",b:"Mayla,\n\nkalau kamu buka ini berarti mungkin kamu lagi kangen. Jadi sekarang anggap aja aku lagi duduk di sebelah kamu.\n\nNggak harus ngomong apa-apa. Sini dulu. Aku temenin. ♥\n\nDan kalau rasa kangennya masih ada... yaudah, simpan sedikit buat nanti pas kita ketemu.",k:"OPEN WHEN // YOU MISS ME"},2:{t:"Kalau hari kamu lagi berat...",b:"Mayla,\n\naku tahu aku nggak selalu bisa langsung bikin semuanya jadi baik. Tapi aku mau kamu tahu kalau kamu nggak harus selalu kuat sendirian.\n\nIstirahat dulu. Tarik napas. Minum air. Pelan-pelan aja.\n\nAku mungkin nggak bisa memperbaiki semuanya, tapi aku selalu mau dengerin kamu. ♥",k:"OPEN WHEN // YOU FEEL SAD"},3:{t:"Kalau kamu butuh peluk...",b:"Oke. Nggak perlu banyak alasan.\n\n🫂\n\nIni peluk virtual dari aku.\n\nBayangin aku lagi bilang:\n\n“sini...”\n\nTerus aku peluk kamu sampai kamu bilang cukup. ♥",k:"OPEN WHEN // YOU NEED A HUG"},4:{t:"Kalau kamu butuh alasan buat senyum...",b:"Pertama: kamu lucu.\n\nKedua: aku suka kamu.\n\nKetiga: sekarang kamu lagi baca pesan dari orang yang mungkin lagi senyum sendiri karena ngebayangin kamu baca ini. ♥\n\nNah. Minimal senyum dikit dong.",k:"OPEN WHEN // YOU WANT TO SMILE"}}[n];if(!data)return;kicker.textContent=data.k;title.textContent=data.t;body.textContent=data.b;modal.classList.remove("show");void modal.offsetWidth;modal.classList.add("show");spawnPaperPetals();}
+function spawnPaperPetals(){const icons=["✦","♥","✿","·"];for(let i=0;i<10;i++){const el=document.createElement("span");el.className="paper-petal";el.textContent=icons[Math.floor(Math.random()*icons.length)];el.style.left=(35+Math.random()*30)+"%";el.style.top=(38+Math.random()*18)+"%";el.style.setProperty("--dx",((Math.random()-.5)*240)+"px");el.style.setProperty("--dy",(90+Math.random()*150)+"px");el.style.setProperty("--rot",((Math.random()-.5)*180)+"deg");el.style.animationDelay=(Math.random()*.15)+"s";document.body.appendChild(el);setTimeout(()=>el.remove(),2400)}}
 function closeWhen(e){if(e&&e.target!==e.currentTarget)return;document.getElementById("letterModal").classList.remove("show");}
 
 const universeOpened=new Set();
@@ -267,7 +279,7 @@ const bramaPhoto=document.getElementById("bramaPhoto");if(bramaPhoto){bramaPhoto
 function startCinema(){
  const c=document.getElementById("cinema"); c.classList.remove("hidden");
  music.volume=.14;
- const steps=[["c1",500],["c1b",1250],["c2",2100],["cphoto",3000],["c3",5000],["c4",6500],["c5",8200],["c6",10100],["c7",11300],["c8",13300],["c9",15100],["c10",17400],["c11",19200]];
+ const steps=[["c1",500],["c1b",1250],["c2",2100],["cphoto",3000],["c3",5000],["c4",6500],["c5",8200],["c6",10100],["c7",11300],["c8",13300],["c9",15100],["c10",17400],["c10b",18200],["c11",19500]];
  steps.forEach(([id,ms])=>setTimeout(()=>{
    const e=document.getElementById(id);
    if(e){
@@ -275,7 +287,7 @@ function startCinema(){
      setTimeout(()=>e.scrollIntoView({behavior:"smooth",block:"center"}),120);
    }
    if(id==="cphoto")playHeart();
-   if(id==="c7"||id==="c9")playHeart();
+   if(id==="c7"||id==="c9"||id==="c10")playHeart();
    if(id==="c9")setTimeout(()=>document.getElementById("c9").scrollIntoView({behavior:"smooth",block:"center"}),250);
    if(id==="c11")music.volume=.06;
  },ms));
@@ -294,7 +306,8 @@ document.addEventListener("visibilitychange",()=>{if(document.hidden){}});
 <div id="c6" class="cinema-line" style="margin-top:30px">Dan baru kali ini...</div>
 <div id="c7" class="cinema-line cinema-big" style="margin-top:18px">FEEL-NYA BEDA.</div>
 <div id="c8" class="cinema-line" style="margin-top:34px">Makasih udah hadir di hidup aku, Mayla.</div>
-<div id="c9" class="cinema-line cinema-big" style="margin-top:28px">I LOVE YOU. ♥</div>
-<div id="c10" class="cinema-line cinema-small" style="margin-top:30px">— from Brama, with all my heart</div>
+<div id="c9" class="cinema-heartline">Mayla, kalau suatu hari kamu lupa seberapa berarti kamu buat aku,<br>balik lagi ke sini. Biar website kecil ini ngingetin kamu. ♥</div>
+<div id="c10" class="cinema-line cinema-big final-love" style="margin-top:28px">I LOVE YOU. ♥</div>
+<div id="c10b" class="cinema-line cinema-small" style="margin-top:18px">— from Brama, with all my heart</div>
 <div id="c11" class="cinema-end">END OF TRANSMISSION<br><span style="display:block;margin-top:10px">LOVE.exe // STATUS: RUNNING ♥</span></div>
 </div></div></body></html>
