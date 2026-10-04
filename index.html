@@ -266,6 +266,73 @@ h2{font-size:clamp(21px,5vw,28px);margin:0 0 25px}.bigheart{font-size:58px;margi
 /* V33 — LOVE.MAYLA OS */
 .os-wrap{width:min(100%,760px);margin:0 auto}.os-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 14px;border:1px solid rgba(255,79,163,.38);border-radius:12px;background:linear-gradient(180deg,rgba(38,12,44,.9),rgba(15,6,22,.92));box-shadow:inset 0 0 20px rgba(255,79,163,.06),0 0 24px rgba(255,79,163,.08);font:10px Consolas,monospace}.os-brand{color:#ff9dcb;letter-spacing:2px}.os-status{color:#8ff0c2}.os-clock{color:#caaabd}.os-desktop{position:relative;margin-top:12px;padding:18px;border:1px solid rgba(255,157,203,.28);border-radius:16px;background:radial-gradient(circle at 50% 20%,rgba(255,79,163,.11),rgba(9,3,15,.96) 58%),#09040f;min-height:390px;overflow:hidden;box-shadow:inset 0 0 70px rgba(255,79,163,.07)}.os-desktop:before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.7) 0 1px,transparent 1.5px);background-size:86px 86px;opacity:.12;animation:osStars 16s linear infinite;pointer-events:none}@keyframes osStars{to{background-position:86px 86px}}.os-grid{position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.os-app{min-height:112px;border:1px solid rgba(255,157,203,.25);border-radius:14px;background:linear-gradient(180deg,rgba(30,12,38,.92),rgba(14,6,21,.95));color:#fff;cursor:pointer;padding:14px 10px;text-align:center;transition:.22s;box-shadow:inset 0 0 18px rgba(255,79,163,.025)}.os-app:hover{transform:translateY(-4px);border-color:#ff4fa3;box-shadow:0 0 24px rgba(255,79,163,.16)}.os-app:active{transform:scale(.97)}.os-icon{font-size:30px;filter:drop-shadow(0 0 8px rgba(255,79,163,.28));margin-bottom:7px}.os-name{font:700 10px Consolas,monospace;letter-spacing:1.2px;color:#ffb3d5}.os-sub{font:8px Consolas,monospace;color:#806078;margin-top:5px;line-height:1.4}.os-app.locked{opacity:.58;filter:saturate(.5)}.os-app.locked .os-icon{animation:osLock 2s ease-in-out infinite}@keyframes osLock{50%{transform:translateY(-2px);filter:drop-shadow(0 0 14px rgba(255,79,163,.5))}}.os-app.unlocked{border-color:rgba(255,79,163,.65);animation:osUnlock .7s ease-out both}@keyframes osUnlock{0%{transform:scale(.92);box-shadow:0 0 0 rgba(255,79,163,0)}100%{transform:none;box-shadow:0 0 26px rgba(255,79,163,.16)}}.os-bottom{position:relative;z-index:1;margin-top:18px;padding-top:12px;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;gap:10px;align-items:center;font:9px Consolas,monospace;color:#7f5d76}.os-progress{height:5px;flex:1;max-width:260px;background:#241322;border-radius:99px;overflow:hidden}.os-progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,#ff4fa3,#ff9dcb);transition:width .5s ease;box-shadow:0 0 10px rgba(255,79,163,.45)}.os-notify{position:relative;z-index:1;margin-top:12px;padding:10px 12px;border:1px solid rgba(255,79,163,.16);border-radius:10px;background:rgba(255,79,163,.035);font:9px/1.5 Consolas,monospace;color:#9f7891;min-height:34px}.os-unknown-modal{position:fixed;inset:0;z-index:160;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(3,1,8,.82);backdrop-filter:blur(8px)}.os-unknown-modal.show{display:flex}.os-unknown-card{width:min(92vw,500px);padding:28px 20px;border:1px solid #ff4fa3;border-radius:18px;background:linear-gradient(180deg,#190a20,#0a0410);text-align:center;box-shadow:0 0 55px rgba(255,79,163,.2);animation:osModalIn .4s ease-out both}@keyframes osModalIn{from{opacity:0;transform:translateY(14px) scale(.97)}to{opacity:1;transform:none}}.os-unknown-card .lockbig{font-size:44px;animation:heartGlow .8s ease-in-out infinite alternate}.os-unknown-card h3{margin:12px 0;color:#ffb3d5;font:700 18px Consolas,monospace;letter-spacing:1px}.os-unknown-card p{color:#caaabd;font-size:13px;line-height:1.7;white-space:pre-line}.os-close{margin-top:15px;border:0;border-radius:999px;background:#ff4fa3;color:#fff;padding:10px 18px;font-weight:700;cursor:pointer}@media(max-width:600px){.os-head{padding:10px 11px;font-size:9px}.os-desktop{padding:12px;min-height:420px}.os-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.os-app{min-height:112px;padding:12px 8px}.os-icon{font-size:27px}.os-name{font-size:9px}.os-sub{font-size:7.5px}.os-bottom{font-size:8px;flex-wrap:wrap}.os-progress{order:3;flex-basis:100%;max-width:none}}
 </style><!-- V7: cinematic ending auto-scroll fix so I LOVE YOU is always visible -->
+
+<style id="v34-mobile-final-fix">
+/* V34 FINAL MOBILE + CATCH BRAMA ALIGNMENT FIX */
+.forbidden-open-btn{
+  display:block !important;
+  width:100% !important;
+  max-width:100% !important;
+  min-width:0 !important;
+  margin:14px auto 0 !important;
+  padding:13px 14px !important;
+  box-sizing:border-box !important;
+  text-align:center !important;
+  white-space:normal !important;
+  overflow-wrap:anywhere !important;
+  word-break:normal !important;
+  line-height:1.35 !important;
+}
+
+/* Keep every mobile card inside the actual screen/frame */
+@media (max-width:600px){
+  main{box-sizing:border-box !important;overflow:hidden !important;}
+  .screen{box-sizing:border-box !important;width:100% !important;max-width:100% !important;}
+  .forbidden-wrap{width:100% !important;max-width:100% !important;padding:0 !important;margin:0 auto !important;box-sizing:border-box !important;}
+  .forbidden-card{width:100% !important;max-width:100% !important;box-sizing:border-box !important;margin:0 auto !important;padding:18px 12px 16px !important;}
+  .forbidden-open-btn{width:100% !important;max-width:100% !important;margin:14px auto 0 !important;}
+  .catch-wrap{width:100% !important;max-width:100% !important;box-sizing:border-box !important;margin:0 auto !important;}
+  .catch-arena{
+    width:100% !important;
+    max-width:620px !important;
+    box-sizing:border-box !important;
+    margin:14px auto !important;
+    height:clamp(240px,68vw,350px) !important;
+    min-height:240px !important;
+  }
+}
+
+/* Brama and its glow are one moving object — no detached shadow */
+.brama-target{overflow:visible !important;isolation:isolate !important;}
+.brama-target .brama-beam{
+  left:50% !important;
+  top:50% !important;
+  width:100% !important;
+  height:100% !important;
+  transform:translate(-50%,-50%) !important;
+  border-radius:50% !important;
+  z-index:0 !important;
+  background:radial-gradient(ellipse at center,
+    rgba(255,157,203,.16) 0%,
+    rgba(255,79,163,.10) 42%,
+    rgba(255,79,163,.035) 68%,
+    transparent 78%) !important;
+  box-shadow:0 0 18px rgba(255,79,163,.12),0 0 30px rgba(255,157,203,.07) !important;
+  filter:none !important;
+  pointer-events:none !important;
+}
+.brama-target img{
+  position:relative !important;
+  z-index:1 !important;
+  filter:none !important;
+  transform:none !important;
+}
+.brama-target.teleport .brama-beam{
+  width:100% !important;
+  height:100% !important;
+  box-shadow:0 0 22px rgba(255,79,163,.28) !important;
+}
+</style>
 </head>
 <body><div id="bg"></div><div id="veil"></div><div id="rain"></div>
 <header><h1>LOVE.MAYLA</h1><p>A LITTLE PROGRAM MADE FOR MAYLA RUBI SHAHIA ♥</p></header>
