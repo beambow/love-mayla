@@ -445,6 +445,8 @@ biar website kecil ini yang ngomong.
 — Brama ♥</div><div class="letter-signature">— BRAMA / PERSONAL NOTE</div><div class="letter-footnote">P.S. Kamu masih boleh bilang ini lebay. Aku terima. ♥</div></div><button class="btn" onclick="startFinal()">REVEAL THE REAL MESSAGE ♥</button></div></section>
 <section id="processing" class="screen hidden"><h2 class="pink mono">PROCESSING FINAL MESSAGE...</h2><div class="final-loader"><div class="final-loader-track"><div id="finalFill" class="final-loader-fill"></div><span class="final-loader-sheen"></span></div><div class="final-loader-meta"><span id="finalStatus">INITIALIZING HEART SIGNAL...</span><span id="typePct">0%</span></div></div><div class="final-loader-orbit"><span></span><i>♥</i></div><div id="typed" class="bodytext" style="font-weight:700;margin-top:35px"></div></section>
 <section id="ai" class="screen hidden"><div class="pb-wrap"><h2 class="pink mono">PHOTOBOX</h2><iframe id="pbFrame" class="pb-frame" title="Beamw Retro Photobooth" allow="camera; microphone; fullscreen; clipboard-write; web-share" allowfullscreen></iframe><button class="btn alt" onclick="show('vault')">KEMBALI KE VAULT ♥</button></div></section>
+<section id="galeri" class="screen hidden"><div class="gb-wrap"><h2 class="pink mono">GALERI PHOTOBOX</h2><div class="muted mono" style="margin-bottom:12px">KENANGAN KITA // TAP FOTO UNTUK MELIHAT ♥</div><div id="gbGrid" class="gb-grid"></div><div id="gbEmpty" class="muted mono small gb-empty"></div><button class="btn alt" onclick="show('vault')">KEMBALI KE VAULT ♥</button></div>
+<div id="gbBox" class="gb-box" hidden><div class="gb-card"><div id="gbCount" class="gb-title mono pink"></div><div class="gb-stage"><button type="button" class="gb-nav" id="gbPrev" aria-label="Sebelumnya">‹</button><img id="gbImg" class="gb-big" alt=""><button type="button" class="gb-nav" id="gbNext" aria-label="Berikutnya">›</button></div><div id="gbCap" class="gb-capbig mono"></div><button class="btn alt" id="gbClose">CLOSE ♥</button></div></div></section>
 <section id="heartbeat" class="screen hidden"><h2 class="pink mono">♥ HEARTBEAT MODE ♥</h2><div id="pulse" class="pink" style="font-size:64px;margin:60px 0;transition:transform .12s ease;filter:drop-shadow(0 0 24px rgba(255,79,163,.9));animation:heartGlow .38s ease-in-out infinite alternate">♥</div><div class="muted mono">heartbeat.exe</div><div class="soft" style="margin-top:25px">♥ &nbsp;&nbsp; ♥ &nbsp;&nbsp; ♥</div></section>
 <section id="reveal" class="screen hidden"><h2 class="pink mono">ANALYSIS COMPLETE ♥</h2><div class="muted mono">FINAL CONCLUSION: NOT EVERYTHING NEEDS A LOGICAL ANSWER.</div><div class="bodytext" style="font-weight:700;margin-top:30px">Ada hal yang ternyata nggak bisa dihitung,
 nggak bisa dijelaskan,
@@ -479,7 +481,8 @@ I hope you know how much you mean to me.</div></div>
 </div>
 <div class="universe-launch"><button class="universe-btn" onclick="openUniverse()"><div class="u-stars">✦ ✧ ★ ✦</div><div class="u-title">ENTER OUR UNIVERSE</div><div class="u-sub">A LITTLE WORLD MADE FROM MAYLA × BRAMA</div></button></div>
 <div class="treasure-wrap"><button class="treasure-btn" onclick="openTreasure()"><div class="chest">🗝️</div><div class="treasure-title">OPEN THE TREASURE</div><div class="treasure-sub mono">A LITTLE BOX OF MEMORIES</div></button></div>
-<div class="muted mono small" style="margin-top:16px">Pilih apa pun yang kamu mau. LOVE.MAYLA tidak akan memaksa. ♥</div><button class="forbidden-btn forbidden-open-btn" onclick="openForbidden()">🚫 JANGAN BUKA MENU TERLARANG INI</button><button class="btn alt" onclick="show('ai')">OPEN PHOTOBOX ›</button></section>
+<div class="muted mono small" style="margin-top:16px">Pilih apa pun yang kamu mau. LOVE.MAYLA tidak akan memaksa. ♥</div><button class="forbidden-btn forbidden-open-btn" onclick="openForbidden()">🚫 JANGAN BUKA MENU TERLARANG INI</button><button class="btn alt" onclick="show('ai')">OPEN PHOTOBOX ›</button>
+<button class="btn alt" onclick="show('galeri')">GALERI PHOTOBOX ›</button></section>
 <section id="universe" class="screen hidden"><h2 class="pink mono">OUR UNIVERSE ♥</h2><div class="muted mono">MAYLA × BRAMA // PRIVATE GALAXY</div><div class="universe-stage" id="universeStage"><div class="u-hud"><span>LOVE.MAYLA // STAR MAP</span><span id="uCount">0 / 5 STARS</span></div><div class="u-nebula a"></div><div class="u-nebula b"></div><div class="u-orbit o1"></div><div class="u-orbit o2"></div><div class="u-orbit o3"></div><div class="u-sun">MAYLA<br>×<br>BRAMA</div><button class="u-star s1" onclick="openUniverseItem(1)">📸<small>OUR MEMORIES</small></button><button class="u-star s2" onclick="openUniverseItem(2)">💌<small>OPEN WHEN</small></button><button class="u-star s3" onclick="openUniverseItem(3)">💗<small>THINGS I LOVE</small></button><button class="u-star s4" onclick="openUniverseItem(4)">🌙<small>THE BEGINNING</small></button><button class="u-star s5 locked" onclick="openUniverseItem(5)">🔮<small>THE FUTURE</small></button><div class="u-hintbox">✨ PETUNJUK: BUKA 4 BINTANG UNTUK MEMBUKA 1 BINTANG RAHASIA</div></div><div class="u-hint">Tap bintang untuk membuka cerita • drag untuk eksplor • 4 bintang → 1 bintang rahasia ♥</div><div class="u-progress"><span id="uProgress"></span></div><button class="btn alt" onclick="show('vault')">KEMBALI KE VAULT ♥</button></section>
 <div id="universeModal" class="universe-modal" onclick="closeUniverseModal(event)"><div class="universe-card"><div id="uIcon" class="uc-icon">✨</div><div id="uKicker" class="uc-kicker">STAR DISCOVERED</div><h3 id="uTitle">OUR UNIVERSE</h3><img id="uImage" class="hidden" src="" alt="Memory universe"><p id="uBody"></p><button class="u-close" onclick="closeUniverseModal()">CLOSE STAR ♥</button></div></div>
 <section id="treasure" class="screen hidden"><h2 class="pink mono">TREASURE UNLOCKED ♥</h2><div class="muted mono">MEMORIES FOUND: 06</div><div class="treasure-hint">PILIH PETI UNTUK MEMBUKA MEMORI ♥</div><div class="treasure-secret-hint">🔐 PETUNJUK RAHASIA: BUKA SEMUA 6 CHEST UNTUK MEMBUKA FITUR RAHASIA</div><div class="chest-grid">
@@ -502,7 +505,7 @@ I hope you know how much you mean to me.</div></div>
 <audio id="music" src="AM_backing_track.wav" loop preload="auto"></audio><audio id="typeSound" src="type_click.wav" preload="auto"></audio><audio id="heartSound" src="heartbeat.wav" preload="auto"></audio>
 <audio id="voiceMessage" src="VOICE_MESSAGE_BRAMA.m4a" preload="metadata"></audio>
 <script>
-const ids=["home","scan","result","letter","processing","heartbeat","reveal","vault","treasure","puzzle","catchgame","universe","photo","ai","forbidden"];let current="home",timer=null;
+const ids=["home","scan","result","letter","processing","heartbeat","reveal","vault","treasure","puzzle","catchgame","universe","photo","ai","galeri","forbidden"];let current="home",timer=null;
 const music=document.getElementById("music"),typeSound=document.getElementById("typeSound"),heartSound=document.getElementById("heartSound");
 function show(id){ids.forEach(x=>document.getElementById(x).classList.toggle("hidden",x!==id));current=id}
 function spawnHeart(){const e=document.createElement("span");e.className="heart";e.textContent="♥";e.style.left=(Math.random()*100)+"vw";e.style.fontSize=(7+Math.random()*10)+"px";e.style.animationDuration=(3.8+Math.random()*4.5)+"s";e.style.setProperty("--dx",(Math.random()*70-35)+"px");e.style.opacity=.35+Math.random()*.5;document.getElementById("rain").appendChild(e);setTimeout(()=>e.remove(),9000)}
@@ -652,6 +655,92 @@ document.addEventListener("visibilitychange",()=>{if(document.hidden){}});
     if(!open&&fr.getAttribute('src'))fr.removeAttribute('src');
   }
   new MutationObserver(sync).observe(sec,{attributes:true,attributeFilter:['class']});
+})();
+</script>
+
+<style>
+/* GALERI PHOTOBOX */
+.gb-wrap{width:100%;max-width:760px;margin:0 auto;box-sizing:border-box}
+.gb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+@media(max-width:600px){.gb-grid{grid-template-columns:repeat(2,1fr)}}
+.gb-item{position:relative;padding:0;border:1px solid rgba(255,79,163,.45);border-radius:10px;overflow:hidden;background:#110718;cursor:pointer;box-shadow:0 0 18px rgba(255,79,163,.1);transition:.2s}
+.gb-item:hover{transform:translateY(-2px);box-shadow:0 0 24px rgba(255,79,163,.3)}
+.gb-item img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover}
+.gb-cap{padding:6px 8px;font:10px Consolas,monospace;color:#dcb8cd;text-align:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.gb-empty{margin:18px 0;line-height:1.6;white-space:pre-line}
+.gb-box{position:fixed;inset:0;z-index:9999;background:rgba(7,3,12,.95);display:flex;align-items:center;justify-content:center;padding:14px;overflow-y:auto}
+.gb-box[hidden]{display:none}
+.gb-card{width:100%;max-width:560px;margin:auto;text-align:center}
+.gb-title{margin-bottom:10px;font-size:12px;letter-spacing:2px}
+.gb-stage{display:flex;align-items:center;gap:6px;margin-bottom:10px}
+.gb-big{flex:1;min-width:0;max-width:100%;max-height:68dvh;object-fit:contain;border-radius:8px;border:1px solid rgba(255,79,163,.45);box-shadow:0 0 30px rgba(255,79,163,.2)}
+.gb-nav{flex:none;width:38px;height:38px;border-radius:50%;border:1px solid #ff4fa3;background:rgba(255,79,163,.12);color:#ff9dcb;font-size:22px;line-height:1;cursor:pointer}
+.gb-nav[hidden]{display:none}
+.gb-capbig{min-height:16px;margin-bottom:6px;font-size:12px;color:#f5ddea}
+</style>
+<script src="galeri/galeri.js"></script>
+<script>
+/* GALERI PHOTOBOX: foto statis dari folder galeri/ (daftar nama file ada di galeri/galeri.js) */
+(function(){
+  var sec=document.getElementById('galeri');if(!sec)return;
+  var grid=document.getElementById('gbGrid'),empty=document.getElementById('gbEmpty'),
+      box=document.getElementById('gbBox'),img=document.getElementById('gbImg'),
+      cap=document.getElementById('gbCap'),cnt=document.getElementById('gbCount'),
+      prev=document.getElementById('gbPrev'),next=document.getElementById('gbNext');
+  var list=[],idx=0;
+  function norm(){
+    var raw=Array.isArray(window.GALERI_FOTO)?window.GALERI_FOTO:[];
+    return raw.map(function(x){
+      if(typeof x==='string')x={file:x};
+      if(!x||!x.file)return null;
+      return {src:'galeri/'+x.file,title:x.judul||'',bad:false};
+    }).filter(Boolean);
+  }
+  function go(i){
+    idx=i;var it=list[idx];img.src=it.src;img.alt=it.title||'foto';
+    cap.textContent=it.title||'';
+    var ok=list.filter(function(x){return !x.bad}),pos=ok.indexOf(it)+1;
+    cnt.textContent=pos+' / '+ok.length;
+    prev.hidden=next.hidden=ok.length<2;
+  }
+  function step(d){
+    var n=list.length,i=idx;
+    for(var k=0;k<n;k++){i=(i+d+n)%n;if(!list[i].bad){go(i);return}}
+  }
+  function closeBox(){box.hidden=true;img.removeAttribute('src')}
+  function load(){
+    grid.innerHTML='';list=norm();
+    if(!list.length){empty.textContent='BELUM ADA FOTO.\nSebentar lagi diisi ya. ♥';return}
+    empty.textContent='';
+    list.forEach(function(it,i){
+      var b=document.createElement('button');b.type='button';b.className='gb-item';
+      var im=document.createElement('img');im.src=it.src;im.alt=it.title||'foto';im.loading='lazy';
+      im.onerror=function(){it.bad=true;b.style.display='none';
+        if(list.every(function(x){return x.bad}))empty.textContent='BELUM ADA FOTO.\nSebentar lagi diisi ya. ♥'};
+      b.appendChild(im);
+      if(it.title){var c=document.createElement('div');c.className='gb-cap';c.textContent=it.title;b.appendChild(c)}
+      b.onclick=function(){go(i);box.hidden=false};
+      grid.appendChild(b);
+    });
+  }
+  prev.onclick=function(){step(-1)};next.onclick=function(){step(1)};
+  document.getElementById('gbClose').onclick=closeBox;
+  box.addEventListener('click',function(e){if(e.target===box)closeBox()});
+  var x0=null;
+  box.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
+  box.addEventListener('touchend',function(e){
+    if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;x0=null;
+    if(Math.abs(dx)>50&&list.length>1)step(dx<0?1:-1);
+  });
+  document.addEventListener('keydown',function(e){
+    if(box.hidden)return;
+    if(e.key==='Escape')closeBox();
+    else if(e.key==='ArrowLeft')step(-1);
+    else if(e.key==='ArrowRight')step(1);
+  });
+  new MutationObserver(function(){
+    if(!sec.classList.contains('hidden'))load();else{closeBox();grid.innerHTML=''}
+  }).observe(sec,{attributes:true,attributeFilter:['class']});
 })();
 </script>
 </body></html>
