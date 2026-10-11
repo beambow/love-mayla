@@ -444,7 +444,7 @@ biar website kecil ini yang ngomong.
 
 — Brama ♥</div><div class="letter-signature">— BRAMA / PERSONAL NOTE</div><div class="letter-footnote">P.S. Kamu masih boleh bilang ini lebay. Aku terima. ♥</div></div><button class="btn" onclick="startFinal()">REVEAL THE REAL MESSAGE ♥</button></div></section>
 <section id="processing" class="screen hidden"><h2 class="pink mono">PROCESSING FINAL MESSAGE...</h2><div class="final-loader"><div class="final-loader-track"><div id="finalFill" class="final-loader-fill"></div><span class="final-loader-sheen"></span></div><div class="final-loader-meta"><span id="finalStatus">INITIALIZING HEART SIGNAL...</span><span id="typePct">0%</span></div></div><div class="final-loader-orbit"><span></span><i>♥</i></div><div id="typed" class="bodytext" style="font-weight:700;margin-top:35px"></div></section>
-<section id="ai" class="screen hidden"><div class="ai-wrap"><h2 class="pink mono">LOVE.MAYLA AI</h2><div class="muted mono" style="margin-bottom:12px">PRIVATE TERMINAL // MAYLA × BRAMA</div><div class="ai-terminal"><div class="ai-top"><span class="ai-dot"></span><span class="ai-dot"></span><span class="ai-dot"></span><span class="ai-title">love.mayla://terminal</span></div><div id="aiOutput" class="ai-output"></div><div class="ai-input-row"><input id="aiInput" class="ai-input" autocomplete="off" spellcheck="false" placeholder="type a command..." onkeydown="if(event.key==='Enter')runAI()"><button class="ai-send" onclick="runAI()">RUN</button></div></div><div class="ai-scan"><span></span></div><div class="ai-commands">HELP · MAYLA · BRAMA · MEMORIES · HEART · SECRET · CLEAR</div><button class="btn alt" onclick="show('vault')">KEMBALI KE VAULT ♥</button></div></section>
+<section id="ai" class="screen hidden"><div class="pb-wrap"><h2 class="pink mono">PHOTOBOX</h2><iframe id="pbFrame" class="pb-frame" title="Beamw Retro Photobooth" allow="camera; microphone; fullscreen; clipboard-write; web-share" allowfullscreen></iframe><button class="btn alt" onclick="show('vault')">KEMBALI KE VAULT ♥</button></div></section>
 <section id="heartbeat" class="screen hidden"><h2 class="pink mono">♥ HEARTBEAT MODE ♥</h2><div id="pulse" class="pink" style="font-size:64px;margin:60px 0;transition:transform .12s ease;filter:drop-shadow(0 0 24px rgba(255,79,163,.9));animation:heartGlow .38s ease-in-out infinite alternate">♥</div><div class="muted mono">heartbeat.exe</div><div class="soft" style="margin-top:25px">♥ &nbsp;&nbsp; ♥ &nbsp;&nbsp; ♥</div></section>
 <section id="reveal" class="screen hidden"><h2 class="pink mono">ANALYSIS COMPLETE ♥</h2><div class="muted mono">FINAL CONCLUSION: NOT EVERYTHING NEEDS A LOGICAL ANSWER.</div><div class="bodytext" style="font-weight:700;margin-top:30px">Ada hal yang ternyata nggak bisa dihitung,
 nggak bisa dijelaskan,
@@ -479,7 +479,7 @@ I hope you know how much you mean to me.</div></div>
 </div>
 <div class="universe-launch"><button class="universe-btn" onclick="openUniverse()"><div class="u-stars">✦ ✧ ★ ✦</div><div class="u-title">ENTER OUR UNIVERSE</div><div class="u-sub">A LITTLE WORLD MADE FROM MAYLA × BRAMA</div></button></div>
 <div class="treasure-wrap"><button class="treasure-btn" onclick="openTreasure()"><div class="chest">🗝️</div><div class="treasure-title">OPEN THE TREASURE</div><div class="treasure-sub mono">A LITTLE BOX OF MEMORIES</div></button></div>
-<div class="muted mono small" style="margin-top:16px">Pilih apa pun yang kamu mau. LOVE.MAYLA tidak akan memaksa. ♥</div><button class="forbidden-btn forbidden-open-btn" onclick="openForbidden()">🚫 JANGAN BUKA MENU TERLARANG INI</button><button class="btn alt" onclick="show('ai');bootAI()">OPEN LOVE.MAYLA AI ›</button></section>
+<div class="muted mono small" style="margin-top:16px">Pilih apa pun yang kamu mau. LOVE.MAYLA tidak akan memaksa. ♥</div><button class="forbidden-btn forbidden-open-btn" onclick="openForbidden()">🚫 JANGAN BUKA MENU TERLARANG INI</button><button class="btn alt" onclick="show('ai')">OPEN PHOTOBOX ›</button></section>
 <section id="universe" class="screen hidden"><h2 class="pink mono">OUR UNIVERSE ♥</h2><div class="muted mono">MAYLA × BRAMA // PRIVATE GALAXY</div><div class="universe-stage" id="universeStage"><div class="u-hud"><span>LOVE.MAYLA // STAR MAP</span><span id="uCount">0 / 5 STARS</span></div><div class="u-nebula a"></div><div class="u-nebula b"></div><div class="u-orbit o1"></div><div class="u-orbit o2"></div><div class="u-orbit o3"></div><div class="u-sun">MAYLA<br>×<br>BRAMA</div><button class="u-star s1" onclick="openUniverseItem(1)">📸<small>OUR MEMORIES</small></button><button class="u-star s2" onclick="openUniverseItem(2)">💌<small>OPEN WHEN</small></button><button class="u-star s3" onclick="openUniverseItem(3)">💗<small>THINGS I LOVE</small></button><button class="u-star s4" onclick="openUniverseItem(4)">🌙<small>THE BEGINNING</small></button><button class="u-star s5 locked" onclick="openUniverseItem(5)">🔮<small>THE FUTURE</small></button><div class="u-hintbox">✨ PETUNJUK: BUKA 4 BINTANG UNTUK MEMBUKA 1 BINTANG RAHASIA</div></div><div class="u-hint">Tap bintang untuk membuka cerita • drag untuk eksplor • 4 bintang → 1 bintang rahasia ♥</div><div class="u-progress"><span id="uProgress"></span></div><button class="btn alt" onclick="show('vault')">KEMBALI KE VAULT ♥</button></section>
 <div id="universeModal" class="universe-modal" onclick="closeUniverseModal(event)"><div class="universe-card"><div id="uIcon" class="uc-icon">✨</div><div id="uKicker" class="uc-kicker">STAR DISCOVERED</div><h3 id="uTitle">OUR UNIVERSE</h3><img id="uImage" class="hidden" src="" alt="Memory universe"><p id="uBody"></p><button class="u-close" onclick="closeUniverseModal()">CLOSE STAR ♥</button></div></div>
 <section id="treasure" class="screen hidden"><h2 class="pink mono">TREASURE UNLOCKED ♥</h2><div class="muted mono">MEMORIES FOUND: 06</div><div class="treasure-hint">PILIH PETI UNTUK MEMBUKA MEMORI ♥</div><div class="treasure-secret-hint">🔐 PETUNJUK RAHASIA: BUKA SEMUA 6 CHEST UNTUK MEMBUKA FITUR RAHASIA</div><div class="chest-grid">
@@ -635,4 +635,23 @@ document.addEventListener("visibilitychange",()=>{if(document.hidden){}});
 <div id="c10" class="cinema-line cinema-big final-love" style="margin-top:28px">I LOVE YOU. ♥</div>
 <div id="c10b" class="cinema-line cinema-small" style="margin-top:18px">— from Brama, with all my heart</div>
 <div id="c11" class="cinema-end">END OF TRANSMISSION<br><span style="display:block;margin-top:10px">LOVE.MAYLA // STATUS: RUNNING ♥</span></div>
-</div></div></body></html>
+</div></div>
+<style>
+/* PHOTOBOX EMBED */
+.pb-wrap{width:100%;max-width:760px;margin:0 auto;box-sizing:border-box}
+.pb-frame{display:block;width:100%;height:62dvh;min-height:420px;border:1px solid rgba(255,79,163,.45);border-radius:12px;background:#f4e8d5;box-shadow:0 0 35px rgba(255,79,163,.13);margin:0 auto 6px}
+</style>
+<script>
+/* PHOTOBOX EMBED: muat saat menu dibuka, kosongkan saat ditutup (supaya kamera mati) */
+(function(){
+  var sec=document.getElementById('ai'),fr=document.getElementById('pbFrame');
+  if(!sec||!fr)return;
+  function sync(){
+    var open=!sec.classList.contains('hidden');
+    if(open&&!fr.getAttribute('src'))fr.setAttribute('src','photobox/index.html');
+    if(!open&&fr.getAttribute('src'))fr.removeAttribute('src');
+  }
+  new MutationObserver(sync).observe(sec,{attributes:true,attributeFilter:['class']});
+})();
+</script>
+</body></html>
